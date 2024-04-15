@@ -1,0 +1,64 @@
+Query Expresion List: ['!', '[', 'cachorr', '&', 'angel', ']']
+Stem Elements['cachorr', 'angel']
+
+Procesamiento 1
+Stack Temp: ['!']
+Expresion Postfijo: []
+
+
+Procesamiento 2
+Stack Temp: ['!', '[']
+Expresion Postfijo: []
+
+
+Procesamiento 3
+Stack Temp: ['!', '[']
+Expresion Postfijo: ['cachorr']
+
+
+Procesamiento 4
+Stack Temp: ['!', '[', '&']
+Expresion Postfijo: ['cachorr']
+
+
+Procesamiento 5
+Stack Temp: ['!', '[', '&']
+Expresion Postfijo: ['cachorr', 'angel']
+
+
+Procesamiento 6
+Stack Temp: []
+Expresion Postfijo: ['cachorr', 'angel', '&', '!']
+
+Expresion Postfijo Final: ['cachorr', 'angel', '&', '!']
+
+Procesamiento de la consulta:
+
+'cachorr': ['ejemplo_1.txt']
+
+'angel': ['ejemplo_10.txt']
+
+Operador && (and) seleccionado
+
+	['ejemplo_1.txt'] ∧ ['ejemplo_10.txt']
+
+	[]
+
+Operador ! (not) seleccionado
+
+	¬[]
+
+	['ejemplo_1.txt', 'ejemplo_10.txt', 'ejemplo_2.txt', 'ejemplo_3.txt', 'ejemplo_4.txt', 'ejemplo_5.txt', 'ejemplo_6.txt', 'ejemplo_7.txt', 'ejemplo_8.txt', 'ejemplo_9.txt']
+
+Documentos que satisfacen la consulta:
+
+	> Documento 1 : ejemplo_1.txt
+	> Documento 2 : ejemplo_10.txt
+	> Documento 3 : ejemplo_2.txt
+	> Documento 4 : ejemplo_3.txt
+	> Documento 5 : ejemplo_4.txt
+	> Documento 6 : ejemplo_5.txt
+	> Documento 7 : ejemplo_6.txt
+	> Documento 8 : ejemplo_7.txt
+	> Documento 9 : ejemplo_8.txt
+	> Documento 10 : ejemplo_9.txt

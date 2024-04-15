@@ -1,0 +1,35 @@
+Query Expresion List: ['cachorr', '|', 'angel']
+Stem Elements['cachorr', 'angel']
+
+Procesamiento 1
+Stack Temp: []
+Expresion Postfijo: ['cachorr']
+
+
+Procesamiento 2
+Stack Temp: ['|']
+Expresion Postfijo: ['cachorr']
+
+
+Procesamiento 3
+Stack Temp: []
+Expresion Postfijo: ['cachorr', 'angel', '|']
+
+Expresion Postfijo Final: ['cachorr', 'angel', '|']
+
+Procesamiento de la consulta:
+
+'cachorr': ['ejemplo_1.txt']
+
+'angel': ['ejemplo_10.txt']
+
+Operador || (or) seleccionado
+
+	['ejemplo_1.txt'] ∨ ['ejemplo_10.txt']
+
+	['ejemplo_1.txt', 'ejemplo_10.txt']
+
+Documentos que satisfacen la consulta:
+
+	> Documento 1 : ejemplo_1.txt
+	> Documento 2 : ejemplo_10.txt
