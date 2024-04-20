@@ -1,0 +1,37 @@
+\subsection{Procesamiento de Texto}
+La manipulación y transformación de texto para prepararlo para su análisis y búsqueda. Esto incluye la conversión a minúsculas, la eliminación de caracteres especiales y acentos, así como la tokenización para dividir el texto en palabras o tokens.
+\subsection{Stemming}
+Un proceso que reduce las palabras a su forma raíz o base. Ayuda a simplificar las palabras para que se puedan buscar de manera más efectiva. En el código, se utilizan algoritmos de stemming como SnowballStemmer.
+\subsection{Índice Inverso}
+Una estructura de datos que almacena información sobre qué palabras clave aparecen en qué documentos. Facilita la búsqueda rápida de documentos que contienen ciertas palabras clave.
+\subsection{Consultas Booleanas}
+Consultas que utilizan operadores booleanos como AND, OR y NOT para combinar condiciones de búsqueda y recuperar documentos que cumplen con esas condiciones.
+\subsection{Notación Post-fija}
+Un método para representar y evaluar expresiones matemáticas o lógicas donde los operadores siguen a sus operandos. En el código, se utiliza para evaluar consultas booleanas de manera eficiente.
+\subsection{Matriz Binaria}
+Una representación en forma de matriz donde se indica la presencia (1) o ausencia (0) de palabras clave en los documentos. Se utiliza para acelerar la búsqueda de documentos relevantes.
+\subsection{Flexibilidad en el Idioma}
+La capacidad de procesar y comprender documentos en diferentes idiomas mediante el uso de algoritmos de procesamiento de lenguaje natural específicos para cada idioma.
+\subsection{Recuperación de Información}
+El proceso de buscar y obtener información relevante de una colección de documentos en función de criterios de búsqueda definidos por el usuario.
+\subsection{Normalización}
+La transformación de texto para llevarlo a una forma estándar o común, lo que facilita la comparación y búsqueda de palabras clave.
+\subsection{Stopwords}
+Palabras comunes que se filtran o eliminan del texto durante el procesamiento, ya que a menudo no aportan información relevante para la búsqueda.
+\subsection{Algoritmo MD5}
+(Message-Digest Algorithm 5) es un protocolo criptográfico que se utiliza para verificar la integridad de los datos. Aquí te explico cómo funciona:
+\subsubsection{Entrada de datos}
+El proceso comienza con la entrada de datos en forma de una cadena de texto. Esto puede ser cualquier tipo de información, desde un simple mensaje hasta archivos completos. La entrada de datos es el punto de partida del algoritmo MD5, donde se inicia el proceso de transformación de la información en un hash único.
+\subsubsection{División en bloques}
+Una vez que se ha proporcionado la entrada de datos, el algoritmo MD5 divide esta cadena en bloques de 512 bits. Esta división facilita el procesamiento de los datos y es una característica esencial del algoritmo. Los bloques de 512 bits son estándar para el algoritmo MD5 y permiten que el proceso de hashing se realice de manera eficiente.
+\subsubsection{Relleno de bits}
+Si la longitud de los datos de entrada no es un múltiplo de 512 bits, se agrega un proceso de relleno de bits. Esto implica agregar bits adicionales, generalmente ceros, para completar el último bloque de 512 bits. Además del relleno de bits, el algoritmo también añade la longitud original del mensaje al final del último bloque. Esta longitud original es crucial para garantizar la integridad de los datos durante el proceso de hashing.
+\subsubsection{Operaciones matemáticas}
+Una vez que los datos se han dividido en bloques y se ha realizado el relleno de bits necesario, el algoritmo MD5 realiza una serie de operaciones matemáticas en cada bloque de 512 bits. Estas operaciones incluyen combinaciones de rotaciones, adiciones módulo $2^{32}$, funciones booleanas y operaciones lógicas, diseñadas para mezclar y transformar los datos de manera específica.
+\subsubsection{Generación del hash}
+Finalmente, después de completar todas las operaciones matemáticas en cada bloque de datos, el algoritmo MD5 genera un hash de salida de 128 bits. Este hash es una representación única y codificada de los datos de entrada. El proceso garantiza que, aunque se realicen pequeños cambios en los datos de entrada, el hash resultante será completamente diferente, lo que hace que el algoritmo MD5 sea valioso para la verificación de la integridad de los datos y la seguridad de la información.
+
+\subsection{NOTA}
+El resultado es una cadena de 32 caracteres que parece aleatoria, pero siempre será la misma para la misma entrada. Por ejemplo, la palabra "hola" siempre generará este hash: "c4ca4238a0b923820dcc509a6f75849b".
+
+Es importante mencionar que aunque el MD5 es rápido y eficiente, no se considera seguro para funciones criptográficas debido a su vulnerabilidad a los ataques de colisión (dos entradas diferentes que producen el mismo hash). Por lo tanto, se utiliza principalmente para verificar la integridad de los archivos, en lugar de para almacenar contraseñas u otra información sensible.

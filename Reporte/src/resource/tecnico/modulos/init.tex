@@ -1,0 +1,67 @@
+\begin{itemize}
+  \item Descripción general:
+  \begin{itemize}
+    \item El código def \_\_init\_\_(self): es el método constructor de una clase en Python. Este método se ejecuta automáticamente cuando se crea una instancia de la clase. Su función principal es inicializar los atributos de la instancia y realizar cualquier configuración o tarea de inicialización necesaria.
+  \end{itemize}
+  \item Explicación detallada:
+  \begin{itemize}
+    \item Inicialización de atributos:
+    \begin{itemize}
+      \item self.consulta: Se inicializa a None, lo que indica que no hay una consulta actual.
+      \item self.close: Se inicializa a False, lo que indica que el programa no debe cerrarse.
+    \end{itemize}
+    \item Creación de carpetas:
+    \begin{itemize}
+      \item Se verifica si existen las carpetas diccionario y consultas. Si no existen, se crean. Estas carpetas se utilizan para almacenar el diccionario y las consultas, respectivamente.
+    \end{itemize}
+    \item Inicialización de variables:
+    \begin{itemize}
+      \item self.numero\_documentos: Se inicializa a 0, lo que indica que aún no se han procesado documentos.
+      \item self.directorio: Se establece la ruta del directorio que contiene los archivos de texto a procesar.
+      \item self.nombres\_docs: Se crea una lista vacía para almacenar los nombres de los archivos de texto procesados.
+    \end{itemize}
+    \item Definición de la gramática para los operadores y operandos:
+    \begin{itemize}
+      \item Se utilizan expresiones regulares para definir la gramática de los operadores y operandos válidos en las consultas.
+      \item self.operand: Representa un operando, que puede ser una cadena entre comillas simples o una palabra formada por letras y números.
+      \item self.not\_operator: Representa el operador de negación (\! o $\neg$).
+      \item self.and\_operator: Representa el operador AND ($\&\&$, $\&$, o $\land$).
+      \item self.or\_operator: Representa el operador OR ($\|\|$, $\|$, o $\lor$).
+      \item self.grammar\_elements: Se crea una lista con los símbolos gramaticales utilizados. 
+    \end{itemize}
+    \item Definición de la precedencia de los operadores:
+    \begin{itemize}
+      \item Se establece la precedencia de los operadores utilizando una lista de tuplas.
+      Cada tupla contiene el operador, su precedencia y su asociatividad (izquierda o derecha).
+    \end{itemize}
+    \item Definición de la expresión lógica:
+    \begin{itemize}
+      \item Se crea una expresión lógica utilizando la notación infija y la precedencia de los operadores.
+      \item self.expression: Representa la expresión lógica completa.
+    \end{itemize}
+    \item Inicialización de variables relacionadas con la consulta:
+    \begin{itemize}
+      \item self.matriz\_binaria: Se crea una lista vacía para almacenar la matriz binaria de la consulta.
+      \item self.query\_stem\_elements: Se crea una lista vacía para almacenar los elementos de la consulta después de aplicar stemming.
+      \item self.binary\_array\_list: Se crea una lista vacía para almacenar los arrays binarios de cada elemento de la consulta.
+      \item self.hash\_table: Se crea un diccionario vacío para almacenar la tabla hash de términos y documentos.
+      \item self.postfijo: Se crea una lista vacía para almacenar la notación postfija de la consulta.
+      \item self.impresion\_postfijo: Se crea una lista vacía para almacenar la representación impresa de la notación postfija.
+    \end{itemize}
+    \item Inicialización de mutex y condición:
+    \begin{itemize}
+      \item self.mutex: Se crea un mutex para proteger el acceso a las variables compartidas.
+      \item self.condition: Se crea una condición para sincronizar el acceso a las variables compartidas.
+      \item self.consulta\_recibida: Se inicializa a None, lo que indica que no hay una consulta recibida actualmente.
+    \end{itemize}
+    \item Inicialización de la interfaz gráfica:
+    \begin{itemize}
+      \item self.app\_thread: Se crea un hilo para inicializar la interfaz gráfica.
+      \item self.app\_thread.start(): Se inicia el hilo para ejecutar la interfaz gráfica.
+    \end{itemize}
+  \end{itemize}
+  \item En Resumen:
+  \begin{itemize}
+    \item El método def \_\_init\_\_(self): realiza la inicialización completa de la instancia de la clase, preparando el entorno para el procesamiento de consultas y la interacción con la interfaz gráfica.
+  \end{itemize}
+\end{itemize}

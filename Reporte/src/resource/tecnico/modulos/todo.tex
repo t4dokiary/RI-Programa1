@@ -1,0 +1,68 @@
+\subsubsection{crear\_tabla}
+crear tabla(self, array, nombre). Este metodo crea una tabla a partir de un array y la almacena en un archivo de texto. Es utilizado para almacenar tablas de palabras, frecuencias, stopwords y stemming.
+\subsubsection{crear\_matriz\_binaria}
+crear matriz binaria(self, palabras, numero documentos). Este metodo crea una matriz binaria donde cada fila representa una palabra y cada columna representa un documento. El valor en cada celda de la matriz indica si la palabra aparece en el documento correspondiente.
+\subsubsection{computar\_hash}
+computar hash(self, word). Calcula el valor hash MD5 de una palabra y lo devuelve como una cadena hexadecimal. crear hash table(self, words, binary dict). Crea una tabla hash que asocia palabras a sus valores binarios en la matriz binaria.
+\subsubsection{token\_snow}
+token stopw(self, string). Realiza la tokenizacion, elimina las stopwords y aplica stemming a una cadena de texto.
+\subsubsection{procesar bool exp}
+procesar bool exp(self, query str). Toma una cadena de consulta booleana y la convierte en una
+lista de elementos que representan la expresion booleana.
+\subsubsection{procesar postfijo}
+procesar postfijo(self, bool exp list). Toma una lista de elementos que representan la expresion
+booleana en notacion infija y la convierte en notacion postfija.
+\subsubsection{operador or}
+or operator(self). Implementa la operacion logica OR en listas binarias y devuelve el resultado.
+\subsubsection{operador and}
+and operator(self). Implementa la operacion logica AND en listas binarias y devuelve el resultado.
+\subsubsection{operador not}
+not operator(self). Implementa la operacion logica NOT en una lista binaria y devuelve el resultado.
+\subsubsection{esperar consulta}
+esperar consulta(self). Bloquea hasta que se recibe una consulta desde la interfaz grafica.
+\subsubsection{recibir consulta}
+recibir consulta(self, consulta). Recibe una consulta desde la interfaz grafica y la almacena para
+su posterior procesamiento.
+\subsubsection{procesar query}
+process query(self, operator). Ejecuta una operacion booleana (AND, OR o NOT) en los arrays
+binarios y devuelve el resultado.
+\subsubsection{hash query}
+hash query(self, hash). Busca en la tabla hash un valor binario correspondiente a un hash de
+palabra.
+\subsubsection{ejecutar query}
+ejecutar query(self, postfijo). Ejecuta una consulta booleana en notacion postfija utilizando los
+arrays binarios y devuelve el resultado.
+\subsubsection{obtener docs}
+obtener docs(self, array docs). Imprime los documentos que satisfacen una consulta booleana en
+funcion del resultado de la evaluacion.
+\subsubsection{clear}
+clear(self). Limpia las variables y reinicia el sistema para una nueva consulta.
+\subsubsection{enviar consulta}
+enviar consulta(self). Este metodo se llama cuando se hace clic en el boton ”Enviar”o se presiona
+la tecla Enter despues de ingresar una consulta en el cuadro de texto. Toma la consulta ingresada
+por el usuario y la emite como una se˜nal consulta signal para que el sistema de recuperacion de
+informacion la procese.
+\subsubsection{update output}
+update output(self, output). Este metodo agrega resultados a la lista de resultados en la interfaz
+grafica.
+\subsubsection{init interfaz}
+init (self, sistema ri). El constructor de la clase InterfazRI inicializa la interfaz grafica de usuario
+(GUI) y recibe una instancia de SistemaRI como argumento para establecer una comunicacion entre
+la interfaz y el sistema de recuperacion de informacion.
+\subsubsection{initUI}
+initUI(self). Este metodo configura la interfaz de usuario utilizando la biblioteca PyQt5. Define la
+estructura de la ventana principal, que incluye un menu, un area para ingresar consultas, un boton
+para enviar consultas, una lista para mostrar resultados y un area para mostrar el contenido del
+documento seleccionado.
+\subsubsection{openDocument}
+openDocument(self). Abre un cuadro de dialogo para seleccionar y abrir un documento de texto.
+Luego, muestra el contenido del documento en el area de visualizacion.
+\subsubsection{update document displayed}
+update document displayed(self, item). Este metodo se llama cuando se hace clic en un elemento de la lista de resultados. Si el elemento hace referencia a un documento, muestra el contenido
+del documento seleccionado en el area de visualizacion.
+\subsubsection{mostrar ayuda}
+mostrar ayuda(self). Muestra un cuadro de dialogo modal (QDialog) con informacion de ayuda
+sobre como usar la aplicacion.
+\subsubsection{closeEvent}
+closeEvent(self, event). Este metodo maneja el evento de cierre de la ventana principal y asegura
+que la aplicacion se cierre correctamente cuando se cierra la ventana.

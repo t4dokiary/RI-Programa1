@@ -1,0 +1,37 @@
+\begin{itemize}
+  \item Descripción general:
+  \begin{itemize}
+    \item El código \texttt{def procesar\_texto(self, contenido):} se encarga de preprocesar un texto dado para su posterior uso en la búsqueda de información. Su función principal es convertir el texto a minúsculas, eliminar caracteres especiales, acentos y datos numéricos, y finalmente separar el texto en palabras individuales.
+  \end{itemize}
+  \item Explicación detallada:
+  \begin{itemize}
+    \item Conversión a minúsculas:
+    \begin{itemize}
+      \item contenido = contenido.lower(): Convierte todo el texto en minúsculas. Esto asegura que la búsqueda no sea sensible a las mayúsculas y minúsculas.
+    \end{itemize}
+    \item Eliminación de caracteres especiales:
+    \begin{itemize}
+      \item contenido = \texttt{re.sub(r'[$\land$\\w\\s]', '' contenido)}: Utiliza la biblioteca re y una expresió regular para eliminar cualquier carácter que no sea un letra, número o espacio en blanco. Esto limpia el text de caracteres especiales que podrían interferir con e procesamiento.
+    \end{itemize}
+    \item Eliminación de acentos y normalización:
+    \begin{itemize}
+      \item contenido = \texttt{re.sub(r"([$\land$n\\u0300\-\\u036f]|n(?\!\\u0303(?![\\u0300\-\\u036f])))[\\u0300\-\\u036f]+", r"\\1", {normalize("NFD", contenido)}, 0, re.I)}: Esta línea utiliza expresiones regulares y la función normalize para eliminar los acentos de las palabras en español.
+    \end{itemize}
+    \item Eliminación de datos numéricos:
+    \begin{itemize}
+      \item contenido = re.sub(r'\d+', '', contenido): Elimina cualquier número del texto utilizando una expresión regular. Esto permite que la búsqueda se centre en el contenido textual y no en números.
+    \end{itemize}
+    \item Separación de palabras:
+    \begin{itemize}
+      \item contenido = nltk.word\_tokenize(contenido): Utiliza la biblioteca nltk y la función word\_tokenize para separar el texto en palabras individuales.
+    \end{itemize}
+    \item Conversión a matriz:
+    \begin{itemize}
+      \item contenido = np.asarray(contenido): Convierte la lista de palabras en un array de NumPy. Esto facilita el manejo posterior del texto procesado.
+    \end{itemize}
+  \end{itemize}
+  \item Resumen:
+  \begin{itemize}
+    \item El método \texttt{def procesar\_texto(self, contenido):} realiza un preprocesamiento completo del texto de entrada, preparándolo para su uso en la búsqueda de información. Elimina ruido y normaliza el texto para mejorar la precisión de la búsqueda.
+  \end{itemize}
+\end{itemize}

@@ -1,0 +1,23 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{src/resource/macros}[2024/02/17 Macros personalizadas]
+
+\usepackage{fancyhdr} % Para personalizar el encabezado y el pie de página
+\usepackage{geometry} % Para modificar los márgenes de las páginas
+
+\geometry{tmargin=2.45cm,bmargin=2.45cm,lmargin=2.45cm,rmargin=2.45cm} % Márgenes de la página
+
+% Configuración del encabezado
+\pagestyle{fancy}
+\fancyhf{} % Limpia el encabezado y el pie de página
+\fancyhead[L]{Benemérita Universidad Autónoma de Puebla}
+\fancyhead[C]{}
+\fancyhead[R]{Ciencias de la Computación}
+
+% Configuración del pie de página
+\fancyfoot[L]{Reporte}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Modelo Booleano}
+
+% Grosor de las líneas en el encabezado y el pie de página
+\renewcommand{\headrulewidth}{1pt} % Grosor de la línea del encabezado
+\renewcommand{\footrulewidth}{1pt} % Grosor de la línea del pie de página

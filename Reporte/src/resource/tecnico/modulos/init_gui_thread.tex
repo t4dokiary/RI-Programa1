@@ -1,0 +1,29 @@
+\begin{itemize}
+  \item Descripción general:
+  \begin{itemize}
+    \item El código \texttt{def init\_gui\_thread(self):} se ejecuta en un hilo separado para inicializar la interfaz gráfica de usuario (GUI) de la aplicación. Su función principal es crear la ventana principal de la GUI, conectar las señales de la interfaz a los métodos de la clase y ejecutar el ciclo de eventos de la aplicación.
+  \end{itemize}
+  \item Explicación detallada:
+  \begin{itemize}
+    \item Inicialización de la aplicación Qt:
+    \begin{itemize}
+      \item self.app = QApplication(sys.argv): Crea una instancia de la aplicación Qt utilizando la lista de argumentos de línea de comandos (sys.argv).
+    \end{itemize}
+    \item Creación de la interfaz gráfica:
+    \begin{itemize}
+      \item self.interfaz = InterfazRI(self): Crea una instancia de la clase InterfazRI, que es la clase que representa la ventana principal de la GUI.
+    \end{itemize}
+    \item Conexión de señales:
+    \begin{itemize}
+      \item self.interfaz.consulta\_signal.connect(self.recibir\_consulta): Conecta la señal \texttt{consulta\_signal} de la interfaz al método \texttt{recibir\_consulta} de la clase actual. Esto significa que cuando el usuario ingresa una consulta en la GUI, se emitirá la señal \texttt{consulta\_signal} y se llamará al método \texttt{recibir\_consulta} para procesarla.
+    \end{itemize}
+    \item Ejecución de la aplicación:
+    \begin{itemize}
+      \item \texttt{self.app.exec\_()}: Ejecuta el ciclo de eventos de la aplicación Qt. Esto significa que la GUI se mostrará en la pantalla y la aplicación responderá a los eventos del usuario, como clics en botones y entradas de teclado.
+    \end{itemize}
+  \end{itemize}
+  \item Resumen:
+  \begin{itemize}
+    \item El método \texttt{def init\_gui\_thread(self):} permite que la interfaz gráfica de usuario se ejecute en un hilo separado, lo que evita que bloquee el hilo principal de la aplicación. Esto permite que la aplicación continúe respondiendo a otros eventos mientras el usuario interactúa con la GUI.
+  \end{itemize}
+\end{itemize}

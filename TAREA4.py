@@ -18,6 +18,30 @@ from unicodedata import normalize  # Normalización de texto Unicode en forma co
 from Interfaz import InterfazRI
 
 
+def procesar_texto(contenido):
+    # Convertimos el texto en minusculas
+    contenido = contenido.lower()
+
+    # Limpiamos caracteres especiales por espacios, acentos
+    contenido = re.sub(r'[^\w\s]', '', contenido)  # Quitamos caracteres especiales
+
+    # Quitamos los acentos y limitamos que no modifique la ñ (NFD / descomposición canónica traduce cada carácter a
+    # su forma descompuesta)
+    contenido = re.sub(r"([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+", r"\1",
+                       normalize("NFD", contenido), 0, re.I)
+
+    # Quitamos datos numericos
+    contenido = re.sub(r'\d+', '', contenido)
+
+    # Separamos el texto por palabras
+    contenido = nltk.word_tokenize(contenido)
+
+    # Convertimos contenido de type:list a array
+    contenido = np.asarray(contenido)
+
+    return contenido
+
+
 class SistemaRI:
     def __init__(self):
         self.consulta = None
@@ -70,7 +94,8 @@ class SistemaRI:
         # Definir un arreglo para los valores de cada palabra para cada documento
         self.hash_table = {}
 
-        # Definir una lista para cada elemento al momento de realizar la consulta y se tenga que pasar a la notación Post-Fija
+        # Definir una lista para cada elemento al momento de realizar la consulta y se tenga que pasar a la notación
+        # Post-Fija
         self.postfijo = []
 
         self.impresion_postfijo = []
@@ -94,28 +119,6 @@ class SistemaRI:
         # Ejecuta la aplicación gráfica en su propio ciclo de eventos
         self.app.exec_()
 
-    def procesar_texto(self, contenido):
-        # Convertimos el texto en minusculas
-        contenido = contenido.lower()
-
-        # Limpiamos caracteres especiales por espacios, acentos
-        contenido = re.sub(r'[^\w\s]', '', contenido)  # Quitamos caracteres especiales
-
-        # Quitamos los acentos y limitamos que no modifique la ñ (NFD / descomposición canónica traduce cada carácter a su forma descompuesta)
-        contenido = re.sub(r"([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+", r"\1",
-                           normalize("NFD", contenido), 0, re.I)
-
-        # Quitamos datos numericos
-        contenido = re.sub(r'\d+', '', contenido)
-
-        # Separamos el texto por palabras
-        contenido = nltk.word_tokenize(contenido)
-
-        # Convertimos contenido de type:list a array
-        contenido = np.asarray(contenido)
-
-        return contenido
-
     # Metodo de conversion de la tabla a archivo txt
     def crear_tabla(self, array, nombre):
         df = pd.DataFrame(array, columns=['Palabras'])  # Agregamos en una columna las palabras
@@ -135,7 +138,7 @@ class SistemaRI:
             for archivo in os.listdir(self.directorio):  # Lectura de cada documento para ver la aparicion del termino
                 ruta = os.path.join(self.directorio, archivo)
                 with open(ruta, encoding="utf-8") as doc:
-                    contenido = self.procesar_texto(doc.read())
+                    contenido = procesar_texto(doc.read())
                     doc.close()
                     contenido = [self.spste.stem(word) for word in contenido]  # En Español
                     for cnt in contenido:  # Comparacion del contendio del doc con el termino
@@ -458,7 +461,7 @@ def main():
             sistema_ri.nombres_docs.append(archivo)
 
             with open(ruta, encoding="utf-8") as doc:
-                contenido = sistema_ri.procesar_texto(doc.read())
+                contenido = procesar_texto(doc.read())
                 doc.close()
 
                 # Concatenamos las palabras en el diccionario            

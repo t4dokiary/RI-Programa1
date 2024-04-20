@@ -61,3 +61,36 @@ Documentos que satisfacen la consulta:
 	> Documento 8 : ejemplo_7.txt
 	> Documento 9 : ejemplo_8.txt
 	> Documento 10 : ejemplo_9.txt
+Query Expresion List: ['cachorr', '&', 'angel']
+Stem Elements['cachorr', 'angel']
+
+Procesamiento 1
+Stack Temp: []
+Expresion Postfijo: ['cachorr']
+
+
+Procesamiento 2
+Stack Temp: ['&']
+Expresion Postfijo: ['cachorr']
+
+
+Procesamiento 3
+Stack Temp: []
+Expresion Postfijo: ['cachorr', 'angel', '&']
+
+Expresion Postfijo Final: ['cachorr', 'angel', '&']
+
+Procesamiento de la consulta:
+
+'cachorr': ['ejemplo_1.txt']
+
+'angel': ['ejemplo_10.txt']
+
+Operador && (and) seleccionado
+
+	['ejemplo_1.txt'] ∧ ['ejemplo_10.txt']
+
+	[]
+
+Documentos que satisfacen la consulta:
+

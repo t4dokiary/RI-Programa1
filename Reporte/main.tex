@@ -1,0 +1,30 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc} % Para los acentos
+\usepackage{src/resource/macros} % Importar el estilo
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+\input{src/resource/portada}
+\newpage
+\tableofcontents
+\newpage
+\section{Metodologia}
+\input{src/resource/metodologia/metodologia.tex}
+\newpage
+\section{Resultados}
+\input{src/resource/resultados/main.tex}
+\newpage
+\section{Conclusiones}
+\input{src/resource/conclusion/main.tex}
+\section{Conceptos básicos}
+\input{src/resource/conceptos/main.tex}
+\section{Manual de usuario}
+\input{src/resource/usuario/proceso}
+\section{Manual tecnico}
+\input{src/resource/tecnico/main}
+\newpage
+\section{Codigos}
+\input{src/resource/codigo/main.tex}
+\end{document}
